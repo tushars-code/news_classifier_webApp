@@ -1,70 +1,84 @@
-# Getting Started with Create React App
+# 📰 UPSC News Categorization App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack web application that fetches live news from NewsAPI and automatically categorizes it into UPSC-relevant topics like **Politics, Economy, Science & Tech, Environment, International Affairs,** and more — making daily current affairs organized, simplified, and exam-ready!
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🔄 **Live news fetch** from [NewsAPI](https://newsapi.org/)
+- 🧠 **Python-based categorization model** for UPSC tags
+- ⚡ **FastAPI** backend to expose the model as an API
+- ⚛️ **React.js** frontend to display categorized news
+- 📂 Clean and informative UI with category filters (optional)
+- 📈 Chart-ready structure for visualization
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 💡 Use Case
 
-### `npm test`
+This app helps:
+- Students and UPSC aspirants who want **auto-organized news**
+- Educators who want **daily categorized headlines**
+- Developers showcasing **real-world AI + frontend skills**
+- Recruiters looking for **problem-solving + full-stack ability**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📸 Demo Preview
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![App Screenshot](./screenshot.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🧩 Tech Stack
 
-### `npm run eject`
+### ⚙️ Backend (API & Model)
+- Python
+- FastAPI
+- Pandas
+- Requests
+- NewsAPI
+- CORS Middleware
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### ⚛️ Frontend
+- React.js
+- Hooks (`useEffect`, `useState`)
+- Fetch API
+- JSX + CSS modules
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🧪 How It Works
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1. FastAPI backend fetches news from NewsAPI
+- Endpoint: `GET /news`
+- Extracts and cleans `title`, `description`, `url`
+- Applies keyword-based tagger for UPSC topics
 
-## Learn More
+### 2. React frontend
+- Fetches categorized news JSON from backend
+- Displays it in an elegant card format with tag badge
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🔥 Live Categories Example
 
-### Code Splitting
+| Title                                  | Category             |
+|----------------------------------------|----------------------|
+| "India's GDP projected to grow by..."  | Economy              |
+| "ISRO launches quantum satellite..."   | Science & Tech       |
+| "Monsoon delay affects crops..."       | Environment          |
+| "Lok Sabha passes new bill..."         | Politics             |
+| "India-China border talks ongoing..."  | International Affairs|
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+## 🛠️ How to Run Locally
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### 📦 Backend (FastAPI)
+```bash
+git clone https://github.com/your-username/upsc-news-app.git
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --reload
